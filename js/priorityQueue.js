@@ -3,6 +3,9 @@
  * Priority Queue to follow dijkstra's algorithm, it will contain all visited GraphNodes with their distance to starting node.
  * As an element for the Queue, we can use GraphLink(s) an they have all required data on them, a destinationNode and a distance.
  */
+/**
+  * Simple priority queue implementation.
+  */
 var PriorityQueue = /** @class */ (function () {
     function PriorityQueue(baseQueue) {
         if (baseQueue) {

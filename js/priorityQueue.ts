@@ -3,9 +3,12 @@
  * As an element for the Queue, we can use GraphLink(s) an they have all required data on them, a destinationNode and a distance.
  */
 
+/**
+  * Simple priority queue implementation.
+  */
 class PriorityQueue {
-    queue : GraphLink[];
-    constructor(baseQueue? : GraphLink[]) {
+    queue : any[];
+    constructor(baseQueue? : any[]) {
         if (baseQueue) {
             this.queue = baseQueue;
         } else {
@@ -13,7 +16,7 @@ class PriorityQueue {
         }
     }
 
-    add(graphLink : GraphLink | GraphLink[]) { // graphLink.array.forEach(element => {});
+    add(graphLink : any | any[]) {
         this.queue = this.queue.concat(graphLink);
         // this.queue.filter(Element=>JSON.stringify())
         this.queue.sort((a, b) => a.distance - b.distance);
