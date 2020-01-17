@@ -4,27 +4,28 @@
  */
 
 class PriorityQueue {
-  queue: GraphLink[];
-  constructor(baseQueue?: GraphLink[]) {
-    if (baseQueue) {
-      this.queue = baseQueue;
-    } else {
-      this.queue = [];
+    queue : GraphLink[];
+    constructor(baseQueue? : GraphLink[]) {
+        if (baseQueue) {
+            this.queue = baseQueue;
+        } else {
+            this.queue = [];
+        }
     }
-  }
 
-  add(graphLink: GraphLink | GraphLink[]) {
-    // graphLink.array.forEach(element => {});
-    this.queue = this.queue.concat(graphLink);
-    // this.queue.filter(Element=>JSON.stringify())
-    this.queue.sort((a, b) => a.distance - b.distance);
-  }
+    add(graphLink : GraphLink | GraphLink[]) { // graphLink.array.forEach(element => {});
+        this.queue = this.queue.concat(graphLink);
+        // this.queue.filter(Element=>JSON.stringify())
+        this.queue.sort((a, b) => a.distance - b.distance);
+    }
 
-  info() {
-    console.log(`
+    info() {
+        console.log(`
         Priority Queue Info
-        Elements:    ${this.queue.length}
+        Elements:    ${
+            this.queue.length
+        }
         `);
-    this.queue.forEach(Element => Element.info());
-  }
+        this.queue.forEach(Element => Element.info());
+    }
 }
