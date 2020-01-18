@@ -5,7 +5,10 @@
  */
 /**
   * Simple priority queue implementation.
+  * It is sorted to mantain priority, a function to compare priority over the objects used
+  * must be provided.
   */
+// sort(compareFn? : (a : T, b : T) => number) : this;
 var PriorityQueue = /** @class */ (function () {
     function PriorityQueue(baseQueue) {
         if (baseQueue) {
@@ -15,9 +18,9 @@ var PriorityQueue = /** @class */ (function () {
             this.queue = [];
         }
     }
-    PriorityQueue.prototype.add = function (graphLink) {
+    PriorityQueue.prototype.add = function (graphLink, compareFn) {
+        auxSet;
         this.queue = this.queue.concat(graphLink);
-        // this.queue.filter(Element=>JSON.stringify())
         this.queue.sort(function (a, b) { return a.distance - b.distance; });
     };
     PriorityQueue.prototype.info = function () {

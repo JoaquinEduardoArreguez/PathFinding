@@ -5,8 +5,16 @@
 
 /**
   * Simple priority queue implementation.
+  * It is sorted to mantain priority, a function to compare priority over the objects used
+  * must be provided.
   */
+
+
+// sort(compareFn? : (a : T, b : T) => number) : this;
+
+
 class PriorityQueue {
+    qiueue : Set;
     queue : any[];
     constructor(baseQueue? : any[]) {
         if (baseQueue) {
@@ -16,9 +24,10 @@ class PriorityQueue {
         }
     }
 
-    add(graphLink : any | any[]) {
+    add(graphLink : any | any[], compareFn? : (a : any, b : any) => number) {
+        auxSet
         this.queue = this.queue.concat(graphLink);
-        // this.queue.filter(Element=>JSON.stringify())
+
         this.queue.sort((a, b) => a.distance - b.distance);
     }
 
